@@ -1,1 +1,112 @@
-/home/pinkolik/.ideavimrc
+""" Preferences
+set relativenumber
+
+""" Editing and Reloading the Config
+set clipboard+=unnamed
+set clipboard+=ideaput
+map \e :e ~/.ideavimrc<CR>
+map \r <Action>(IdeaVim.ReloadVimRc.reload)
+
+""" The Leader Key
+let mapleader=" "
+
+""" Distraction Free Mode
+map <c-z> <Action>(ToggleDistractionFreeMode)
+
+""" Terminal
+map <c-t> <Action>(ActivateTerminalToolWindow)
+map <leader>t <Action>(Terminal.OpenInTerminal)
+
+""" Navigation
+map <c-\> <Action>(SplitVertically)
+map <c--> <Action>(SplitHorizontally)
+map <c-=> <Action>(Unsplit)
+map <c-m> <Action>(MoveEditorToOppositeTabGroup)
+""" sethandler <c-j> a:vim
+""" sethandler <c-k> a:vim
+map <c-h> <c-w>h
+map <c-l> <c-w>l
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <TAB> <Action>(PreviousTab)
+map <s-TAB> <Action>(NextTab)
+map <Leader>en <Action>(EditSourceInNewWindow)
+map <Leader>n <Action>(NextWindow)
+map <Leader>q <Action>(CloseContent)
+map <Leader>qa <Action>(CloseAllEditors)
+
+""" Editing source code
+set ideajoin
+set idearefactormode=keep
+""" map << gvv
+""" map >> gv
+map [[ <Action>(MethodUp)
+map ]] <Action>(MethodDown)
+map zc <Action>(CollapseRegion)
+map zo <Action>(ExpandRegion)
+map <leader>zc <Action>(CollapseAllRegions)
+map <leader>zo <Action>(ExpandAllRegions)
+map <leader>c <Action>(CommentByLineComment)
+map <leader>r <Action>(Refactorings.QuickListPopupAction)
+map <Leader>=  <Action>(ReformatCode)
+map <leader>o <Action>(OptimizeImports)
+map <m-r> <Action>(RecentFiles)
+map <leader>l <Action>(RecentLocations)
+map <leader>h  <Action>(LocalHistory.ShowHistory)
+map ge <Action>(GotoNextError)
+map gE <Action>(GotoPreviousError)
+map <leader>s :write<CR>
+""" map ??? <Action>(ShowIntentionActions)
+
+""" Searching and Source Code Navigation
+set incsearch
+map <c-/> <Action>(FindInPath)
+map <c-a> <Action>(GotoAction)
+map <c-f> <Action>(GotoFile)
+map <leader>u <Action>(FindUsages)
+map <leader>s <Action>(GotoRelated)
+map <leader>h <Action>(CallHierarchy)
+map <leader>b <Action>(ShowNavBar)
+map <c-s> <Action>(FileStructurePopup)
+map <c-o> <Action>(GotoSymbol)
+map gc <Action>(GotoClass)
+map gi <Action>(GotoImplementation)
+map gd <Action>(GotoDeclaration)
+map gp <Action>(GotoSuperMethod)
+map gt <Action>(GotoTest)
+map gb <Action>(Back)
+map gf <Action>(Forward)
+
+""" Tool windows
+map <c-p> <Action>(JumpToLastWindow)
+map <c-x> <Action>(HideAllWindows)
+
+""" Running and Debugging
+map ,r <Action>(ContextRun)
+map ,c <Action>(RunClass)
+map ,f <Action>(ChooseRunConfiguration)
+map ,t <Action>(ActivateRunToolWindow)
+map ,u <Action>(Rerun)
+map ,f <Action>(RerunFailedTests)
+map ,b <Action>(ToggleLineBreakpoint)
+map ,d <Action>(ContextDebug)
+map ,n <Action>(ActivateDebugToolWindow)
+
+Plug 'easymotion/vim-easymotion'
+map <leader>d <Plug>(easymotion-s)
+map <leader>f <Plug>(easymotion-f)
+
+set NERDTree
+map <m-t> :NERDTree<CR>
+
+Plug 'terryma/vim-multiple-cursors'
+
+""" Plug 'tpope/vim-commentary'
+
+Plug 'tpope/vim-surround'
+
+Plug 'tommcdo/vim-exchange'
+
+Plug ‘michaeljsmith/vim-indent-object’
+
+Plug 'machakann/vim-highlightedyank'
