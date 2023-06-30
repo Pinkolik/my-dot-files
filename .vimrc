@@ -1,7 +1,6 @@
 set clipboard=unnamedplus,unnamed
 set relativenumber
 
-
 call plug#begin()
 Plug 'preservim/NERDTree'
 Plug 'vim-airline/vim-airline'
