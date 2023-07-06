@@ -38,6 +38,7 @@ map <Leader>qa <Action>(CloseAllEditors)
 """ Editing source code
 set ideajoin
 set idearefactormode=keep
+inoremap jk <ESC>
 """ map << gvv
 """ map >> gv
 map [[ <Action>(MethodUp)
@@ -55,7 +56,7 @@ map <leader>l <Action>(RecentLocations)
 map <leader>h  <Action>(LocalHistory.ShowHistory)
 map ge <Action>(GotoNextError)
 map gE <Action>(GotoPreviousError)
-map <leader>s :write<CR>
+map <m-i> <Action>(Generate)
 """ map ??? <Action>(ShowIntentionActions)
 
 """ Searching and Source Code Navigation
@@ -64,18 +65,18 @@ map <c-/> <Action>(FindInPath)
 map <c-a> <Action>(GotoAction)
 map <c-f> <Action>(GotoFile)
 map <leader>u <Action>(FindUsages)
-map <leader>s <Action>(GotoRelated)
+""" map <leader>s <Action>(GotoRelated)
 map <leader>h <Action>(CallHierarchy)
 map <leader>b <Action>(ShowNavBar)
 map <c-s> <Action>(FileStructurePopup)
-map <c-o> <Action>(GotoSymbol)
+""" map <c-o> <Action>(GotoSymbol)
 map gc <Action>(GotoClass)
 map gi <Action>(GotoImplementation)
 map gd <Action>(GotoDeclaration)
 map gp <Action>(GotoSuperMethod)
 map gt <Action>(GotoTest)
-map gb <Action>(Back)
-map gf <Action>(Forward)
+""" gb <Action>(Back)
+""" map gf <Action>(Forward)
 
 """ Tool windows
 map <c-p> <Action>(JumpToLastWindow)
@@ -93,8 +94,7 @@ map ,d <Action>(ContextDebug)
 map ,n <Action>(ActivateDebugToolWindow)
 
 Plug 'easymotion/vim-easymotion'
-map <leader>d <Plug>(easymotion-s)
-map <leader>f <Plug>(easymotion-f)
+map <leader>f <Plug>(easymotion-s)
 
 set NERDTree
 map <m-t> :NERDTree<CR>
