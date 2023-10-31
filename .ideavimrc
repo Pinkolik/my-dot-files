@@ -1,5 +1,6 @@
 """ Preferences
 set relativenumber
+set ignorecase
 
 """ Editing and Reloading the Config
 set clipboard+=unnamed
@@ -15,7 +16,7 @@ map <c-z> <Action>(ToggleDistractionFreeMode)
 
 """ Terminal
 map <c-t> <Action>(ActivateTerminalToolWindow)
-map <leader>t <Action>(Terminal.OpenInTerminal)
+map tt <Action>(Terminal.OpenInTerminal)
 
 """ Navigation
 map <c-\> <Action>(SplitVertically)
@@ -64,13 +65,13 @@ set incsearch
 map <c-/> <Action>(FindInPath)
 map <c-a> <Action>(GotoAction)
 map <c-f> <Action>(GotoFile)
+map <c-c> <Action>(GotoClass)
 map <leader>u <Action>(FindUsages)
 """ map <leader>s <Action>(GotoRelated)
 map <leader>h <Action>(CallHierarchy)
 map <leader>b <Action>(ShowNavBar)
 map <c-s> <Action>(FileStructurePopup)
 """ map <c-o> <Action>(GotoSymbol)
-map gc <Action>(GotoClass)
 map gi <Action>(GotoImplementation)
 map gd <Action>(GotoDeclaration)
 map gp <Action>(GotoSuperMethod)
@@ -78,9 +79,12 @@ map gt <Action>(GotoTest)
 """ gb <Action>(Back)
 """ map gf <Action>(Forward)
 
-""" Tool windows
-map <c-p> <Action>(JumpToLastWindow)
+""" Remap later
 map <c-x> <Action>(HideAllWindows)
+
+""" Inc and Dec
+inoremap <m-a> <C-a>
+inoremap <m-l> <C-d>
 
 """ Running and Debugging
 map ,r <Action>(ContextRun)
@@ -97,11 +101,18 @@ Plug 'easymotion/vim-easymotion'
 map <leader>f <Plug>(easymotion-s)
 
 set NERDTree
-map <m-t> :NERDTree<CR>
+map <leader>t :NERDTree<CR>
+map <leader>T :NERDTreeFind<CR>
 
 Plug 'terryma/vim-multiple-cursors'
+let g:multi_cursor_use_default_mapping=0
+let g:multi_cursor_start_word_key      = '<m-n>'
+let g:multi_cursor_next_key            = '<m-n>'
+let g:multi_cursor_prev_key            = '<m-p>'
+let g:multi_cursor_skip_key            = '<m-x>'
+let g:multi_cursor_quit_key            = '<Esc>'
 
-""" Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-commentary'
 
 Plug 'tpope/vim-surround'
 

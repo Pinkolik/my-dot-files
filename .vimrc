@@ -18,6 +18,7 @@ Plug 'tpope/vim-fugitive'
 """ Plug 'valloric/youcompleteme'
 Plug 'easymotion/vim-easymotion'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'tommcdo/vim-exchange'
 call plug#end()
 """ Plugins
 map <leader>t :NERDTreeToggle<CR>
